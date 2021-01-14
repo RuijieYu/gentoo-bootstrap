@@ -1,0 +1,5 @@
+#!/bin/bash
+source bootstrap.export
+
+chroot "$CHROOT_PATH" bash --rcfile /bootstrap.bashrc
+

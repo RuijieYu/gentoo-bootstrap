@@ -1,0 +1,8 @@
+# fstab file for boostrapping, need to change root
+## mount --types proc /proc /mnt/gentoo/proc
+/proc /proc proc defaults
+## mount --rbind /sys /mnt/gentoo/sys
+/sys /sys none rbind,rslave
+## mount --rbind /dev /mnt/gentoo/dev
+/dev /dev none rbind,rslave
+

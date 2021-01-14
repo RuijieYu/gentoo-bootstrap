@@ -1,0 +1,25 @@
+#!/bin/bash
+
+source bootstrap.export
+
+alias _install='install -DCvm0644'
+
+# copy repository information
+_install \
+	"$CHROOT_PATH/usr/share/portage/config/repos.conf" \
+	"$CHROOT_PATH/etc/portage/repos.conf/gentoo.conf"
+
+# copy DNS info
+_install \
+	/etc/resolv.conf \
+	"$CHROOT_PATH/etc/"
+
+# mount necessary filesystems
+mount -va \
+	--target-prefix "$CHROOT_PATH" \
+	-T "$CHROOT_PATH/bootstrap.fstab"
+## warning on /dev/shm about non-gentoo installation media, don't care for the moment
+## wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Base#Chrooting
+
+./bootstrap.chroot
+
