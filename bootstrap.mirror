@@ -1,0 +1,6 @@
+#!/bin/bash
+REGION='North America'
+SERVERNUM=5
+
+mirrorselect -R"$REGION" -D -s"$SERVERNUM" "$@"
+
