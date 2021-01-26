@@ -1,2 +1,5 @@
 export CHROOT_PATH=/mnt/gentoo
 
+# my existing machine has additional paths set, maybe it is a good idea to reset them
+export PATH=/sbin:/usr/sbin:/bin:/usr/bin
+
