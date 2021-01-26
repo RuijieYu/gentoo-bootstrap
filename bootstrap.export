@@ -3,3 +3,6 @@ export CHROOT_PATH=/mnt/gentoo
 # my existing machine has additional paths set, maybe it is a good idea to reset them
 export PATH=/sbin:/usr/sbin:/bin:/usr/bin
 
+# also, the only guaranteed-installed locale is C, so use that
+export LC_ALL=C
+
